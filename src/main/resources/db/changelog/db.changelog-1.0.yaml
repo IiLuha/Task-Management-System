@@ -1,0 +1,140 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating-user-table
+      author: ITDev
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: creating-executer-table
+      author: ITDev
+      changes:
+        - createTable:
+            tableName: executer
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: bigserial
+                  constraints:
+                    foreignKeyName: fk_executer_user
+                    references: users(id)
+                    unique: true
+                    nullable: false
+  - changeSet:
+      id: creating-author-table
+      author: ITDev
+      changes:
+        - createTable:
+            tableName: author
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: bigserial
+                  constraints:
+                    foreignKeyName: fk_author_user
+                    references: users(id)
+                    unique: true
+                    nullable: false
+  - changeSet:
+      id: creating-task-table
+      author: ITDev
+      changes:
+        - createTable:
+            tableName: task
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    foreignKey: true
+                    unique: true
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(50)
+              - column:
+                  name: priority
+                  type: varchar(50)
+              - column:
+                  name: author id
+                  type: bigserial
+                  constraints:
+                    foreignKeyName: fk_task_author
+                    references: author(id)
+                    unique: true
+                    nullable: false
+              - column:
+                  name: executer id
+                  type: bigserial
+                  constraints:
+                    foreignKeyName: fk_task_executer
+                    references: executer(id)
+                    unique: true
+                    nullable: false
+  - changeSet:
+      id: creating-comment-table
+      author: ITDev
+      changes:
+        - createTable:
+            tableName: comment
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: text
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: task id
+                  type: bigserial
+                  constraints:
+                    foreignKeyName: fk_comment_task
+                    references: task(id)
+                    unique: true
+                    nullable: false
