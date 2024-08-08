@@ -1,13 +1,10 @@
 package com.itdev.mapper.read;
 
-import com.itdev.database.entity.Task;
 import com.itdev.database.entity.TaskAuthor;
 import com.itdev.dto.read.AuthorReadDto;
 import com.itdev.mapper.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
-import java.awt.print.Book;
 
 @Component
 @RequiredArgsConstructor
