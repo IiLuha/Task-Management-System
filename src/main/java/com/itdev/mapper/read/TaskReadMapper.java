@@ -1,15 +1,10 @@
 package com.itdev.mapper.read;
 
-import com.itdev.database.entity.Comment;
 import com.itdev.database.entity.Task;
-import com.itdev.dto.read.AuthorReadDto;
-import com.itdev.dto.read.ExecutorReadDto;
 import com.itdev.dto.read.TaskReadDto;
 import com.itdev.mapper.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor

@@ -2,7 +2,6 @@ package com.itdev.mapper.create_edit;
 
 import com.itdev.database.dao.repositories.TaskAuthorRepository;
 import com.itdev.database.dao.repositories.TaskExecutorRepository;
-import com.itdev.database.dao.repositories.UserRepository;
 import com.itdev.database.entity.Task;
 import com.itdev.dto.create_edit.TaskCreateEditDto;
 import com.itdev.mapper.Mapper;
