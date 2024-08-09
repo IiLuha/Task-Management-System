@@ -52,7 +52,7 @@ public class CommentRestController {
 
     @GetMapping("/tasks")
     public List<CommentReadDto> findAllByTaskIds(@RequestBody List<Long> taskIds) {
-        return commentService.findByTaskIds(taskIds);
+        return commentService.findAllByTaskIds(taskIds);
     }
 //
 //    @GetMapping("/{id}/image")

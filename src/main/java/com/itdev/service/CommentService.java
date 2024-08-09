@@ -52,8 +52,8 @@ public class CommentService {
                 .toList();
     }
 
-    public List<CommentReadDto> findByTaskIds(List<Long> ids) {
-        return commentRepository.findByTaskIds(ids).stream()
+    public List<CommentReadDto> findAllByTaskIds(List<Long> ids) {
+        return commentRepository.findAllByTaskIds(ids).stream()
                 .map(commentReadMapper::map)
                 .toList();
     }
