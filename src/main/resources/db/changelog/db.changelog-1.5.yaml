@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: dropUniqueConstraint-author-table
+      author: ITDev
+      changes:
+        - dropUniqueConstraint:
+            constraintName: task_author id_key
+            schemaName: public
+            tableName: task
+            uniqueColumns: author_id
+  - changeSet:
+      id: dropUniqueConstraint-executor-table
+      author: ITDev
+      changes:
+        - dropUniqueConstraint:
+            constraintName: task_executer id_key
+            schemaName: public
+            tableName: task
+            uniqueColumns: executor_id

@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: renameColumn-task-table
+      author: ITDev
+      changes:
+        - renameColumn:
+            columnsDataType: bigserial
+            newColumnName: executer_id
+            oldColumnName: executer id
+            schemaName: public
+            tableName: task
+        - renameColumn:
+            columnsDataType: bigserial
+            newColumnName: author_id
+            oldColumnName: author id
+            schemaName: public
+            tableName: task
+  - changeSet:
+      id: renameColumn-comment-table
+      author: ITDev
+      changes:
+        - renameColumn:
+            columnsDataType: bigserial
+            newColumnName: task_id
+            oldColumnName: task id
+            schemaName: public
+            tableName: comment

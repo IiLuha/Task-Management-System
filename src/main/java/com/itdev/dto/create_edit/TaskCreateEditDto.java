@@ -1,6 +1,5 @@
 package com.itdev.dto.create_edit;
 
-import com.itdev.database.entity.Comment;
 import com.itdev.database.entity.enums.Priority;
 import com.itdev.database.entity.enums.Status;
 import lombok.Value;

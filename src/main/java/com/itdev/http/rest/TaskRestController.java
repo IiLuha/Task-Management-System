@@ -5,6 +5,7 @@ import com.itdev.dto.create_edit.TaskCreateEditDto;
 import com.itdev.dto.filter.TaskFilter;
 import com.itdev.dto.read.TaskReadDto;
 import com.itdev.service.TaskService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -49,13 +50,13 @@ public class TaskRestController {
     }
 
     @PutMapping("/{id}")
-    public TaskReadDto update(@PathVariable Long id, @Validated @RequestBody TaskCreateEditDto task) {
+    public TaskReadDto update(@PathVariable("id") Long id, @Validated @RequestBody TaskCreateEditDto task) {
         return taskService.update(id, task)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    //PathVariable проверить - можно ли без value
     @DeleteMapping("/{id}")
+    @ApiResponse(responseCode = "204", description = "No content")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         return taskService.delete(id)
                 ? noContent().build()
