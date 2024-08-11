@@ -50,6 +50,7 @@ public class Task implements BaseEntity<Long> {
     private TaskAuthor taskAuthor;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "executor_id")
     private TaskExecutor taskExecutor;
 
     @Builder.Default

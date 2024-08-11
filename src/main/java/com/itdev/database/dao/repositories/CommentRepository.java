@@ -11,6 +11,6 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     List<Comment> findByTaskId(Long id);
 
     @Query("select c from Comment c " +
-            "where c.task.id IN :ids")
+            "where c.task.id in (:ids)")
     List<Comment> findAllByTaskIds(List<Long> ids);
 }

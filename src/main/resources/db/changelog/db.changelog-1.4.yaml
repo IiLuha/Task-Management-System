@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: renameTable-executor-table
+      author: ITDev
+      changes:
+        - renameTable:
+            newTableName:  executor
+            oldTableName:  executer
+            schemaName:  public

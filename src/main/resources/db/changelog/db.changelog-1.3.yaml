@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: dropUniqueConstraint-comment-table
+      author: ITDev
+      changes:
+        - dropUniqueConstraint:
+            constraintName:  comment_task id_key
+            schemaName: public
+            tableName: comment
+            uniqueColumns: task_id

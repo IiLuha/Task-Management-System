@@ -1,6 +1,5 @@
 package com.itdev.service;
 
-import com.itdev.dto.read.UserReadDto;
 import com.itdev.http.predicate.TaskPredicateBuilder;
 import com.itdev.database.dao.repositories.TaskRepository;
 import com.itdev.dto.create_edit.TaskCreateEditDto;

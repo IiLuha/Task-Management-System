@@ -16,6 +16,6 @@ public class UserCreateEditDto {
     String email;
 
     @Size(max = 255)
-//    @NotBlank(groups = CreateAction.class)
+    @NotBlank
     String rawPassword;
 }
